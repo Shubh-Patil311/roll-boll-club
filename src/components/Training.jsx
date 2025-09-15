@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Target, Users, Clock, Star, CheckCircle } from "lucide-react";
 
 const Training = () => {
@@ -119,7 +120,13 @@ const Training = () => {
     <section id="training" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
             Training Programs
           </h2>
@@ -128,14 +135,28 @@ const Training = () => {
             programs designed for all ages and skill levels. Expert coaching and
             world-class facilities await you.
           </p>
-        </div>
+        </motion.div>
 
         {/* Training Programs */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8 mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
           {programs.map((program, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+              initial={{ opacity: 0, y: 50 }}
+              variants={{ visible: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.6 }}
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-slate-800">
@@ -194,22 +215,35 @@ const Training = () => {
                 ))}
               </div>
 
-              <button className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-transform duration-300">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-transform"
+              >
                 Enroll Now
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Coaching Staff */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-3xl font-bold text-slate-800 mb-8 text-center">
               Expert Coaching Staff
             </h3>
             <div className="space-y-6">
               {coaches.map((coach, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-lg"
+                  whileHover={{ scale: 1.03 }}
+                >
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
                       <Target size={28} className="text-white" />
@@ -240,19 +274,28 @@ const Training = () => {
                       {coach.achievements}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Facilities */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-3xl font-bold text-slate-800 mb-8 text-center">
               World-Class Facilities
             </h3>
             <div className="space-y-6">
               {facilities.map((facility, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-lg"
+                  whileHover={{ scale: 1.03 }}
+                >
                   <h4 className="text-xl font-bold text-slate-800 mb-3">
                     {facility.name}
                   </h4>
@@ -267,12 +310,18 @@ const Training = () => {
                       </span>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="mt-8 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-white text-center">
+            <motion.div
+              className="mt-8 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 text-white text-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h4 className="text-2xl font-bold mb-4">
                 Ready to Start Your Journey?
               </h4>
@@ -280,11 +329,15 @@ const Training = () => {
                 Join Thunder Roll Ball Club today and take your game to the next
                 level!
               </p>
-              <button className="bg-orange-600 hover:bg-orange-700 px-8 py-3 rounded-xl font-semibold transition-colors">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-orange-600 hover:bg-orange-700 px-8 py-3 rounded-xl font-semibold transition-colors"
+              >
                 Book Free Trial Session
-              </button>
-            </div>
-          </div>
+              </motion.button>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

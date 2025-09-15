@@ -1,5 +1,12 @@
 import React from "react";
-import { Star, Medal, Users } from "lucide-react";
+import { Star, Medal } from "lucide-react";
+import { motion } from "framer-motion";
+
+// Import your player images
+import ShubhamImg from "../assets/ProfilePic2.jpg";
+import AmrutaImg from "../assets/ProfilePic1.jpg";
+import PranavImg from "../assets/ProfilePic4.jpg";
+import SnehaImg from "../assets/ProfilePic3.jpg";
 
 const Teams = () => {
   const teams = [
@@ -36,6 +43,7 @@ const Teams = () => {
       team: "Thunder Seniors",
       experience: "8 years",
       achievements: "MVP 2024",
+      image: ShubhamImg,
     },
     {
       name: "Amruta Deshmukh",
@@ -43,6 +51,7 @@ const Teams = () => {
       team: "Lightning Ladies",
       experience: "6 years",
       achievements: "Best Defender 2023",
+      image: AmrutaImg,
     },
     {
       name: "Pranav Patil",
@@ -50,6 +59,7 @@ const Teams = () => {
       team: "Storm Juniors",
       experience: "3 years",
       achievements: "Rising Star 2024",
+      image: PranavImg,
     },
     {
       name: "Sneha Kulkarni",
@@ -57,6 +67,7 @@ const Teams = () => {
       team: "Lightning Ladies",
       experience: "5 years",
       achievements: "Captain's Award",
+      image: SnehaImg,
     },
   ];
 
@@ -64,7 +75,13 @@ const Teams = () => {
     <section id="teams" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
             Our Championship Teams
           </h2>
@@ -72,14 +89,30 @@ const Teams = () => {
             Meet the talented athletes who represent Thunder Roll Ball Club in
             competitions across the state and beyond.
           </p>
-        </div>
+        </motion.div>
 
         {/* Teams grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-20"
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+          viewport={{ once: true }}
+        >
           {teams.map((team, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow group"
+              initial={{ opacity: 0, y: 40 }}
+              variants={{
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+              }}
+              whileHover={{ scale: 1.05 }}
             >
               <div
                 className={`w-16 h-16 bg-gradient-to-br ${
@@ -119,15 +152,24 @@ const Teams = () => {
                 </div>
               </div>
 
-              <button className="w-full bg-slate-800 text-white py-3 rounded-xl hover:bg-slate-700 transition-colors font-medium">
+              <motion.button
+                className="w-full bg-slate-800 text-white py-3 rounded-xl hover:bg-slate-700 transition-colors font-medium"
+                whileHover={{ scale: 1.05 }}
+              >
                 View Team Details
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Player spotlight */}
-        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg">
+        <motion.div
+          className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          viewport={{ once: true }}
+        >
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-slate-800 mb-4">
               Player Spotlight
@@ -138,12 +180,35 @@ const Teams = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.2 } },
+            }}
+            viewport={{ once: true }}
+          >
             {players.map((player, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-24 h-24 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Users size={32} className="text-slate-600" />
-                </div>
+              <motion.div
+                key={index}
+                className="text-center group"
+                initial={{ opacity: 0, scale: 0.8 }}
+                variants={{
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    transition: { duration: 0.6 },
+                  },
+                }}
+                whileHover={{ scale: 1.08 }}
+              >
+                <img
+                  src={player.image}
+                  alt={player.name}
+                  className="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-4 border-slate-200 group-hover:scale-110 transition-transform"
+                />
                 <h4 className="text-xl font-bold text-slate-800 mb-2">
                   {player.name}
                 </h4>
@@ -158,10 +223,10 @@ const Teams = () => {
                 <p className="text-sm font-medium text-orange-600">
                   {player.achievements}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

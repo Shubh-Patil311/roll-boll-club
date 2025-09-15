@@ -1,5 +1,6 @@
 import React from "react";
 import { Calendar, MapPin, Clock, Trophy, Ticket } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Events = () => {
   const upcomingEvents = [
@@ -9,7 +10,6 @@ const Events = () => {
       time: "6:00 PM",
       location: "Central Sports Arena",
       type: "Championship",
-
       status: "Tickets Available",
     },
     {
@@ -18,7 +18,6 @@ const Events = () => {
       time: "9:00 AM - 4:00 PM",
       location: "Thunder Training Center",
       type: "Training",
-
       status: "Early Bird",
     },
     {
@@ -27,7 +26,6 @@ const Events = () => {
       time: "3:00 PM",
       location: "Downtown Sports Complex",
       type: "Friendly",
-
       status: "Open to All",
     },
     {
@@ -36,7 +34,6 @@ const Events = () => {
       time: "7:00 PM",
       location: "Grand Hotel Ballroom",
       type: "Social",
-
       status: "Limited Seats",
     },
   ];
@@ -81,7 +78,13 @@ const Events = () => {
     <section id="events" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
             Events & Schedule
           </h2>
@@ -90,11 +93,19 @@ const Events = () => {
             events. Join us for exciting roll ball action and community
             activities.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Upcoming Events */}
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.2 } },
+            }}
+            viewport={{ once: true }}
+          >
             <div className="flex items-center space-x-3 mb-8">
               <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center">
                 <Calendar size={24} className="text-white" />
@@ -106,9 +117,18 @@ const Events = () => {
 
             <div className="space-y-6">
               {upcomingEvents.map((event, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-shadow group"
+                  initial={{ opacity: 0, y: 50 }}
+                  variants={{
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.7 },
+                    },
+                  }}
+                  whileHover={{ scale: 1.03 }}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -124,9 +144,6 @@ const Events = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-orange-600">
-                        {event.price}
-                      </div>
                       <div className="text-sm text-green-600 font-medium">
                         {event.status}
                       </div>
@@ -148,17 +165,25 @@ const Events = () => {
                     </div>
                   </div>
 
-                  <button className="w-full bg-slate-800 text-white py-3 rounded-xl hover:bg-orange-600 transition-colors font-medium flex items-center justify-center space-x-2">
+                  <motion.button
+                    className="w-full bg-slate-800 text-white py-3 rounded-xl hover:bg-orange-600 transition-colors font-medium flex items-center justify-center space-x-2"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <Ticket size={20} />
                     <span>Get Tickets</span>
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Past Events & Achievements */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+          >
             <div className="flex items-center space-x-3 mb-8">
               <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
                 <Trophy size={24} className="text-white" />
@@ -170,9 +195,13 @@ const Events = () => {
 
             <div className="space-y-6 mb-8">
               {pastEvents.map((event, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border border-green-100"
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: index * 0.2 }}
+                  viewport={{ once: true }}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-lg font-bold text-slate-800">
@@ -186,12 +215,18 @@ const Events = () => {
                   <p className="text-sm text-slate-500 italic">
                     {event.highlights}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             {/* Training Schedule */}
-            <div className="bg-slate-800 rounded-2xl p-8 text-white">
+            <motion.div
+              className="bg-slate-800 rounded-2xl p-8 text-white"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <h4 className="text-xl font-bold mb-6">
                 Regular Training Schedule
               </h4>
@@ -213,8 +248,8 @@ const Events = () => {
                   <span className="text-orange-400">2:00 PM - 5:00 PM</span>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
