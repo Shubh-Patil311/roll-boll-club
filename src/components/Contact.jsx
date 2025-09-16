@@ -398,7 +398,7 @@ const Contact = () => {
                   <Instagram size={20} className="text-white" />
                 </a>
                 <a
-                  href="www.youtube.com/@amaturerollball2527"
+                  href="https://www.youtube.com/@amaturerollball2527"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center hover:bg-red-600 transition-colors"
