@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-slate-300 mb-6 leading-relaxed max-w-md">
-              Leading the way in roll ball excellence since 2012. Join our
+              Leading the way in roll ball excellence since 2019. Join our
               community of passionate athletes and experience the thrill of
               competitive roll ball in a supportive environment.
             </p>
@@ -114,11 +114,11 @@ const Footer = () => {
                   className="text-orange-400 mt-1 flex-shrink-0"
                 />
                 <div>
-                  <p className="text-slate-300">Gymkhana Sports Complex</p>
-                  <p className="text-slate-400 text-sm">123 Champions Drive</p>
-                  <p className="text-slate-400 text-sm">
-                    Karve Nagar, MC 12345
+                  <p className="text-slate-300">
+                    Amature Roll Ball Association,
                   </p>
+                  <p className="text-slate-400 text-sm">9/C Kesarkar Peth</p>
+                  <p className="text-slate-400 text-sm">Satara, 415002</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
