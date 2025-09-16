@@ -5,9 +5,9 @@ import {
   Mail,
   Facebook,
   Instagram,
-  Twitter,
   Youtube,
 } from "lucide-react";
+import logo from "../assets/logo1.png";
 
 const Footer = () => {
   return (
@@ -18,12 +18,20 @@ const Footer = () => {
           {/* Club Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
+              {/* <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-xl">RB</span>
+              </div> */}
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img
+                  src={logo}
+                  alt="Roll Ball Club Logo"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
+
               <div>
-                <h3 className="text-2xl font-bold">Thunder Roll Ball Club</h3>
-                <p className="text-slate-400">Champions in Motion</p>
+                <h3 className="text-2xl font-bold">Amature Roll Ball </h3>
+                <p className="text-slate-400"> Skating Club Satara</p>
               </div>
             </div>
             <p className="text-slate-300 mb-6 leading-relaxed max-w-md">
@@ -48,12 +56,6 @@ const Footer = () => {
                 href="#"
                 className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors"
               >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors"
-              >
                 <Youtube size={18} />
               </a>
             </div>
@@ -76,29 +78,29 @@ const Footer = () => {
                 Our Teams
               </a>
               <a
-                href="#training"
+                href="#PhotoGallery"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
               >
-                Training Programs
+                Photo Gallery
               </a>
-              <a
+              {/* <a
                 href="#events"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
               >
                 Events
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="#"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
               >
                 News & Updates
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="#"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
               >
                 Gallery
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -166,7 +168,7 @@ const Footer = () => {
         <div className="border-t border-slate-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-slate-400 text-sm">
-              © 2025 Thunder Roll Ball Club. All rights reserved.
+              © 2025 Amature Roll Ball Club. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a

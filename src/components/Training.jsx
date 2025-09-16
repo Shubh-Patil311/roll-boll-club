@@ -5,10 +5,10 @@ import { Target, Users, Clock, Star, CheckCircle } from "lucide-react";
 const Training = () => {
   const programs = [
     {
-      title: "Beginner's Program",
+      title: "Our Training Program",
       duration: "8 weeks",
       sessions: "2 per week",
-      price: "Rs 2000",
+      price: "Affordable Fee",
       level: "Beginner",
       description:
         "Perfect for newcomers to roll ball. Learn basic skating, ball handling, and game rules.",
@@ -18,54 +18,6 @@ const Training = () => {
         "Game rules and positions",
         "Safety equipment training",
         "Small group sessions (max 8 players)",
-      ],
-    },
-    {
-      title: "Intermediate Development",
-      duration: "10 weeks",
-      sessions: "3 per week",
-      price: "Rs 3000",
-      level: "Intermediate",
-      description:
-        "Advance your skills with tactical training, speed work, and competitive gameplay.",
-      features: [
-        "Advanced skating maneuvers",
-        "Tactical game understanding",
-        "Speed and agility training",
-        "Match simulation practices",
-        "Individual skill assessment",
-      ],
-    },
-    {
-      title: "Elite Competition",
-      duration: "12 weeks",
-      sessions: "4 per week",
-      price: "Rs 5000",
-      level: "Advanced",
-      description:
-        "High-intensity training for competitive players aiming for tournaments.",
-      features: [
-        "Professional coaching techniques",
-        "Competition preparation",
-        "Mental performance training",
-        "Strength and conditioning",
-        "Tournament entry opportunities",
-      ],
-    },
-    {
-      title: "Youth Academy",
-      duration: "6 months",
-      sessions: "2 per week",
-      price: "Rs 8000",
-      level: "Youth (8-16)",
-      description:
-        "Comprehensive development program for young athletes with focus on fun and skill building.",
-      features: [
-        "Age-appropriate training methods",
-        "Character development focus",
-        "Parental involvement sessions",
-        "Youth league participation",
-        "Progress tracking and reports",
       ],
     },
   ];
@@ -116,6 +68,14 @@ const Training = () => {
     },
   ];
 
+  // Function to scroll to contact section
+  const handleEnrollNow = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="training" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -137,23 +97,21 @@ const Training = () => {
           </p>
         </motion.div>
 
-        {/* Training Programs */}
+        {/* Training Program - Full Width */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8 mb-20"
+          className="mb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={{
             hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.2 },
-            },
+            visible: { transition: { staggerChildren: 0.2 } },
           }}
         >
           {programs.map((program, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white w-full lg:max-w-6xl mx-auto rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow"
               initial={{ opacity: 0, y: 50 }}
               variants={{ visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.6 }}
@@ -166,11 +124,7 @@ const Training = () => {
                   className={`px-4 py-2 rounded-full text-sm font-medium ${
                     program.level === "Beginner"
                       ? "bg-green-100 text-green-800"
-                      : program.level === "Intermediate"
-                      ? "bg-blue-100 text-blue-800"
-                      : program.level === "Advanced"
-                      ? "bg-orange-100 text-orange-800"
-                      : "bg-purple-100 text-purple-800"
+                      : "bg-blue-100 text-blue-800"
                   }`}
                 >
                   {program.level}
@@ -179,7 +133,7 @@ const Training = () => {
 
               <p className="text-slate-600 mb-6">{program.description}</p>
 
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="text-center p-3 bg-slate-50 rounded-xl">
                   <Clock className="mx-auto text-orange-600 mb-2" size={20} />
                   <div className="text-sm font-medium text-slate-800">
@@ -216,6 +170,7 @@ const Training = () => {
               </div>
 
               <motion.button
+                onClick={handleEnrollNow} // Scroll to contact section
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-transform"
@@ -226,6 +181,7 @@ const Training = () => {
           ))}
         </motion.div>
 
+        {/* Coaches & Facilities */}
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Coaching Staff */}
           <motion.div
@@ -326,10 +282,11 @@ const Training = () => {
                 Ready to Start Your Journey?
               </h4>
               <p className="text-slate-300 mb-6">
-                Join Thunder Roll Ball Club today and take your game to the next
+                Join Amature roll ball Club today and take your game to the next
                 level!
               </p>
               <motion.button
+                onClick={handleEnrollNow} // Scroll to contact section
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-orange-600 hover:bg-orange-700 px-8 py-3 rounded-xl font-semibold transition-colors"

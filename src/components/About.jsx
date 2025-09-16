@@ -1,7 +1,7 @@
 import React from "react";
 import { Target, Users, Award, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import RollBallImg from "../assets/rollboll.gif";
+import RollBallImg from "../assets/Roll-Ball.jpeg";
 
 const About = () => {
   const features = [
@@ -43,10 +43,10 @@ const About = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            About Thunder Roll Ball Club
+            About Amature roll ball Club
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Founded in 2012, Thunder Roll Ball Club has become the premier
+            Founded in 2019, Amature roll ball Club has become the premier
             destination for roll ball enthusiasts. We combine traditional
             training methods with modern techniques to develop champions.
           </p>

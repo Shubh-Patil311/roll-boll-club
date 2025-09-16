@@ -1,10 +1,17 @@
 import React from "react";
 import { Play, Users, Trophy, Calendar } from "lucide-react";
-import RollBallChampion from "../assets/Roll-ball-Winner.jpg";
+import RollBallChampion from "../assets/Champion.jpeg";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const handleJoinNow = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -44,7 +51,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed">
-              Join Thunder Roll Ball Club and experience the thrill of this
+              Join Amature roll ball Club and experience the thrill of this
               dynamic sport. Train with professionals, compete at the highest
               level, and be part of a winning legacy.
             </p>
@@ -52,6 +59,7 @@ const Hero = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <motion.button
+                onClick={handleJoinNow} // Scroll to contact section
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 flex items-center space-x-2"
@@ -61,7 +69,7 @@ const Hero = () => {
               </motion.button>
 
               <motion.a
-                href="https://www.youtube.com/watch?v=Q5onbxMXMos"
+                href="https://www.youtube.com/@amaturerollball2527"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -132,8 +140,8 @@ const Hero = () => {
                   <Calendar size={20} className="text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-800">Next Match</div>
-                  <div className="text-sm text-slate-600">SEP 15, 2025</div>
+                  <div className="font-semibold text-slate-800">Next Batch</div>
+                  <div className="text-sm text-slate-600">Coming Soon</div>
                 </div>
               </div>
             </motion.div>
@@ -150,8 +158,10 @@ const Hero = () => {
                   <Trophy size={20} className="text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-800">Win Rate</div>
-                  <div className="text-sm text-slate-600">87% This Season</div>
+                  <div className="font-semibold text-slate-800">
+                    Our Champion
+                  </div>
+                  <div className="text-sm text-slate-600">Team </div>
                 </div>
               </div>
             </motion.div>

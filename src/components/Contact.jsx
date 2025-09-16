@@ -285,11 +285,10 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   Send,
   Facebook,
   Instagram,
-  Twitter,
+  Youtube,
 } from "lucide-react";
 import { useForm } from "@formspree/react";
 
@@ -318,7 +317,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to join Thunder Roll Ball Club? Have questions about our
+            Ready to join Amature Roll Ball Club? Have questions about our
             programs? We'd love to hear from you and help you get started on
             your roll ball journey.
           </p>
@@ -341,9 +340,11 @@ const Contact = () => {
                   <h4 className="font-semibold text-slate-800 mb-1">
                     Our Location
                   </h4>
-                  <p className="text-slate-600">Gymkhana Sports Complex</p>
-                  <p className="text-slate-600">Karve Nagar, Pune 411052</p>
-                  <p className="text-slate-600">Audhumber City</p>
+                  <p className="text-slate-600">
+                    Amature Roll Ball Association,
+                  </p>
+                  <p className="text-slate-600">9/C Kesarkar Peth </p>
+                  <p className="text-slate-600">Satara, 415002 </p>
                 </div>
               </div>
 
@@ -357,10 +358,6 @@ const Contact = () => {
                     Phone Numbers
                   </h4>
                   <p className="text-slate-600">Main Office: 9309716179</p>
-                  <p className="text-slate-600">
-                    Training Inquiries: 9309716179
-                  </p>
-                  <p className="text-slate-600">Emergency: 9309716179</p>
                 </div>
               </div>
 
@@ -374,25 +371,6 @@ const Contact = () => {
                     Email Addresses
                   </h4>
                   <p className="text-slate-600">info@thunderrollball.com</p>
-                  <p className="text-slate-600">training@thunderrollball.com</p>
-                  <p className="text-slate-600">events@thunderrollball.com</p>
-                </div>
-              </div>
-
-              {/* Hours */}
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Clock size={24} className="text-purple-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-800 mb-1">
-                    Office Hours
-                  </h4>
-                  <p className="text-slate-600">
-                    Monday - Friday: 9:00 AM - 8:00 PM
-                  </p>
-                  <p className="text-slate-600">Saturday: 8:00 AM - 6:00 PM</p>
-                  <p className="text-slate-600">Sunday: 10:00 AM - 4:00 PM</p>
                 </div>
               </div>
             </div>
@@ -404,22 +382,28 @@ const Contact = () => {
               </h4>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/r/17XBijPbqu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center hover:bg-blue-700 transition-colors"
                 >
                   <Facebook size={20} className="text-white" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/satara_rollball?igsh=MWhmaTltbjZoOXNjYQ=="
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center hover:shadow-lg transition-all"
                 >
                   <Instagram size={20} className="text-white" />
                 </a>
                 <a
-                  href="#"
-                  className="w-12 h-12 bg-sky-500 rounded-xl flex items-center justify-center hover:bg-sky-600 transition-colors"
+                  href="www.youtube.com/@amaturerollball2527"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center hover:bg-red-600 transition-colors"
                 >
-                  <Twitter size={20} className="text-white" />
+                  <Youtube size={20} className="text-white" />
                 </a>
               </div>
             </div>
@@ -552,7 +536,7 @@ const Contact = () => {
         <div className="mt-16 rounded-3xl overflow-hidden shadow-lg h-96">
           <iframe
             title="Company Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.742468246312!2d73.70717537402398!3d18.593440482514325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3db4b235679%3A0x3ad99720044fad30!2sGTasterix%20IT%20Pvt.%20Ltd!5e1!3m2!1sen!2sin!4v1757749303853!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.392351986021!2d74.0058903739961!3d17.681499883256706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc239ed116f3f8d%3A0x878d4eaf89920fb2!2sM2J5%2BJ98%2C%209%2C%20Ajinkyatara%20Fort%20Rd%2C%20Shivnery%20Colony%2C%20Radhika%20Nagar%2C%20Shahunagar%2C%20Satara%2C%20Maharashtra%20415001!5e1!3m2!1sen!2sin!4v1758025687196!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

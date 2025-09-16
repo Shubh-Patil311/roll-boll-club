@@ -11,7 +11,7 @@ import SnehaImg from "../assets/ProfilePic3.jpg";
 const Teams = () => {
   const teams = [
     {
-      name: "Thunder Seniors",
+      name: "Men's Senior Team",
       category: "Men's Senior Team",
       achievements: "State Champions 2024",
       players: 12,
@@ -19,7 +19,7 @@ const Teams = () => {
       color: "orange",
     },
     {
-      name: "Lightning Ladies",
+      name: "Women's Senior Team",
       category: "Women's Senior Team",
       achievements: "Regional Champions 2024",
       players: 10,
@@ -27,7 +27,7 @@ const Teams = () => {
       color: "blue",
     },
     {
-      name: "Storm Juniors",
+      name: "Junior Team (U-18)",
       category: "Junior Team (U-18)",
       achievements: "Youth League Winners",
       players: 15,
@@ -86,7 +86,7 @@ const Teams = () => {
             Our Championship Teams
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Meet the talented athletes who represent Thunder Roll Ball Club in
+            Meet the talented athletes who represent Amature roll ball Club in
             competitions across the state and beyond.
           </p>
         </motion.div>
@@ -129,7 +129,7 @@ const Teams = () => {
               <h3 className="text-2xl font-bold text-slate-800 mb-2">
                 {team.name}
               </h3>
-              <p className="text-slate-600 mb-4">{team.category}</p>
+              {/* <p className="text-slate-600 mb-4">{team.category}</p> */}
 
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
@@ -152,12 +152,12 @@ const Teams = () => {
                 </div>
               </div>
 
-              <motion.button
+              {/* <motion.button
                 className="w-full bg-slate-800 text-white py-3 rounded-xl hover:bg-slate-700 transition-colors font-medium"
                 whileHover={{ scale: 1.05 }}
               >
                 View Team Details
-              </motion.button>
+              </motion.button> */}
             </motion.div>
           ))}
         </motion.div>
@@ -175,7 +175,7 @@ const Teams = () => {
               Player Spotlight
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Get to know some of our star players who make Thunder Roll Ball
+              Get to know some of our star players who make Amature roll ball
               Club a force to be reckoned with.
             </p>
           </div>
