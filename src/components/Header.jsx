@@ -168,10 +168,10 @@ const Header = () => {
                 Events
               </a> */}
               <a
-                href="#training"
+                href="#PhotoGallery"
                 className="text-slate-700 hover:text-orange-600 font-medium"
               >
-                Training
+                Photo Gallery
               </a>
               <a
                 href="#contact"
