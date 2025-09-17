@@ -57,7 +57,7 @@ const Footer = () => {
               <a
                 href="https://www.youtube.com/@amaturerollball2527"
                 target="_blank"
-                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors"
+                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-red-500 transition-colors"
               >
                 <Youtube size={18} />
               </a>
@@ -121,7 +121,7 @@ const Footer = () => {
                     Amature Roll Ball Association,
                   </p>
                   <p className="text-slate-400 text-sm">9/C Kesarkar Peth</p>
-                  <p className="text-slate-400 text-sm">Satara, 415002</p>
+                  <p className="text-slate-400 text-sm">Satara, 415001</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

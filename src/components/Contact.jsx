@@ -344,7 +344,7 @@ const Contact = () => {
                     Amature Roll Ball Association,
                   </p>
                   <p className="text-slate-600">9/C Kesarkar Peth </p>
-                  <p className="text-slate-600">Satara, 415002 </p>
+                  <p className="text-slate-600">Satara, 415001 </p>
                 </div>
               </div>
 
