@@ -96,13 +96,13 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">
-                  <CountUp end={250} duration={5} />
+                  <CountUp end={250} duration={5} />+
                 </div>
                 <div className="text-slate-300">Championships</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400 mb-2">
-                  <CountUp end={12} duration={5} />
+                  <CountUp end={6} duration={5} />
                 </div>
                 <div className="text-slate-300">Years Legacy</div>
               </div>
