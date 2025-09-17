@@ -7,7 +7,7 @@ const Training = () => {
     {
       title: "Our Training Program",
       duration: "8 weeks",
-      sessions: "2 per week",
+      sessions: "2 days ",
       price: "Affordable Fee",
       level: "Beginner",
       description:

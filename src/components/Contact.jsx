@@ -385,7 +385,8 @@ const Contact = () => {
                   href="https://www.facebook.com/p/Ameya-skating-club-satara-100068504305646/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center hover:bg-blue-700 transition-colors"
+                  className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center 
+                 hover:bg-blue-700 transform transition-transform duration-300 hover:scale-110"
                 >
                   <Facebook size={20} className="text-white" />
                 </a>
@@ -393,7 +394,9 @@ const Contact = () => {
                   href="https://www.instagram.com/satara_rollball?igsh=MWhmaTltbjZoOXNjYQ=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center hover:shadow-lg transition-all"
+                  className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl 
+                 flex items-center justify-center hover:shadow-lg transform 
+                 transition-transform duration-300 hover:scale-110"
                 >
                   <Instagram size={20} className="text-white" />
                 </a>
@@ -401,7 +404,8 @@ const Contact = () => {
                   href="https://www.youtube.com/@amaturerollball2527"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center hover:bg-red-600 transition-colors"
+                  className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center 
+                 hover:bg-red-600 transform transition-transform duration-300 hover:scale-110"
                 >
                   <Youtube size={20} className="text-white" />
                 </a>
