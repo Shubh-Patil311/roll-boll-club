@@ -41,19 +41,22 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/p/Ameya-skating-club-satara-100068504305646/"
+                target="_blank"
                 className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
               >
                 <Facebook size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/satara_rollball?igsh=MWhmaTltbjZoOXNjYQ=="
+                target="_blank"
                 className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-all"
               >
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@amaturerollball2527"
+                target="_blank"
                 className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors"
               >
                 <Youtube size={18} />
@@ -123,7 +126,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-orange-400" />
-                <span className="text-slate-300">9309716179</span>
+                <span className="text-slate-300">7947126892</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-orange-400" />

@@ -357,7 +357,7 @@ const Contact = () => {
                   <h4 className="font-semibold text-slate-800 mb-1">
                     Phone Numbers
                   </h4>
-                  <p className="text-slate-600">Main Office: 9309716179</p>
+                  <p className="text-slate-600">Main Office: 7947126892</p>
                 </div>
               </div>
 
@@ -382,7 +382,7 @@ const Contact = () => {
               </h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://www.facebook.com/share/r/17XBijPbqu/"
+                  href="https://www.facebook.com/p/Ameya-skating-club-satara-100068504305646/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center hover:bg-blue-700 transition-colors"
