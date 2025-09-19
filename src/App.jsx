@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import Teams from "./components/Teams";
 import PhotoGallery from "./components/PhotoGallery";
 import "./App.css";
+import Events from "./components/Events";
+import Committee from "./components/committee";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
         <About />
         <Teams />
         <PhotoGallery />
+        {/* <Events /> */}
         <Training />
+        {/* <Committee /> */}
         <Contact />
         <Footer />
       </main>

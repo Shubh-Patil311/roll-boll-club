@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import logo from "../assets/logo1.png";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // mobile menu is open or closed
 
   // Function for Join Now button
   const handleJoinNow = () => {
@@ -65,22 +65,21 @@ const Header = () => {
               whileHover={{ scale: 1.1 }}
             />
             <div>
-              <motion.h1
-                className="text-2xl font-bold text-slate-800"
+              <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Amature Roll Ball
-              </motion.h1>
-              <motion.p
-                className="text-sm text-slate-600"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-              >
-                Skating Club Satara
-              </motion.p>
+                {/* Main Heading */}
+                <h1 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                  Amateur Roll Ball
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-sm md:text-base text-slate-700">
+                  & Skating Club Satara
+                </p>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -108,7 +107,7 @@ const Header = () => {
               href="#PhotoGallery"
               className="text-slate-700 hover:text-orange-600 font-medium transition-colors"
             >
-              Photo Gallery
+              Gallery
             </a>
             {/* <a
               href="#training"

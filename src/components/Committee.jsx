@@ -2,87 +2,83 @@ import React from "react";
 import { Star, Medal } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Import your player images
-import ShubhamImg from "../assets/ProfilePic2.jpg";
-import AmrutaImg from "../assets/ProfilePic1.jpg";
-import PranavImg from "../assets/ProfilePic4.jpg";
-import SnehaImg from "../assets/ProfilePic3.jpg";
+// Import your committee member images
+import Member1Img from "../assets/ProfilePic1.jpg";
+import Member2Img from "../assets/ProfilePic2.jpg";
+import Member3Img from "../assets/ProfilePic3.jpg";
+import Member4Img from "../assets/ProfilePic4.jpg";
 
-const Teams = () => {
-  const teams = [
+const Committee = () => {
+  const committees = [
     {
-      name: "Men's Senior Team",
-      category: "Men's Senior Team",
-      achievements: "State Champions 2024",
-      players: 12,
-      captain: "Shubham Patil",
+      name: "Executive Committee",
+      position: "President",
+      achievements: "Led multiple successful events",
+      members: 5,
+      head: "Sangram Patil",
       color: "orange",
     },
     {
-      name: "Women's Senior Team",
-      category: "Women's Senior Team",
-      achievements: "Regional Champions 2024",
-      players: 10,
-      captain: "Amruta Deshmukh",
+      name: "Finance Committee",
+      position: "Treasurer",
+      achievements: "Maintained transparent accounting",
+      members: 4,
+      head: "Amruta Deshmukh",
       color: "blue",
     },
     {
-      name: "Junior Team (U-18)",
-      category: "Junior Team (U-18)",
-      achievements: "Youth League Winners",
-      players: 15,
-      captain: "Pranav Patil",
+      name: "Events Committee",
+      position: "Coordinator",
+      achievements: "Organized championship events",
+      members: 6,
+      head: "Pranav Patil",
       color: "green",
     },
   ];
 
-  const players = [
+  const members = [
     {
-      name: "Shubham Patil",
-      position: "Center Forward",
-      team: "Thunder Seniors",
+      name: "Sangram Patil",
+      role: "President",
       experience: "8 years",
-      achievements: "MVP 2024",
-      image: ShubhamImg,
+      achievements: "Excellent leadership",
+      image: Member1Img,
       color: "orange",
       hoverColor: "#FFE5D1",
     },
     {
       name: "Amruta Deshmukh",
-      position: "Wing Defense",
-      team: "Lightning Ladies",
+      role: "Treasurer",
       experience: "6 years",
-      achievements: "Best Defender 2023",
-      image: AmrutaImg,
+      achievements: "Financial expert",
+      image: Member2Img,
       color: "blue",
       hoverColor: "#D0E6FF",
     },
     {
       name: "Pranav Patil",
-      position: "Goal Shooter",
-      team: "Storm Juniors",
-      experience: "3 years",
-      achievements: "Rising Star 2024",
-      image: PranavImg,
+      role: "Coordinator",
+      experience: "5 years",
+      achievements: "Event management pro",
+      image: Member3Img,
       color: "green",
       hoverColor: "#D5F5E3",
     },
     {
       name: "Sneha Kulkarni",
-      position: "Midfielder",
-      team: "Lightning Ladies",
-      experience: "5 years",
-      achievements: "Captain's Award",
-      image: SnehaImg,
+      role: "Secretary",
+      experience: "4 years",
+      achievements: "Organizational skills",
+      image: Member4Img,
       color: "purple",
       hoverColor: "#EAD1FF",
     },
   ];
 
   return (
-    <section id="teams" className="py-20 bg-slate-50">
+    <section id="committee" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Animated Section header */}
+        {/* Section header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -93,18 +89,18 @@ const Teams = () => {
           <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-              Championship
+              Committee
             </span>{" "}
-            Teams
+            Members
           </h2>
 
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Meet the talented athletes who represent Amature roll ball Club in
-            competitions across the state and beyond.
+            Meet the dedicated committee members who manage and support Amature
+            Roll Ball Club’s operations and events.
           </p>
         </motion.div>
 
-        {/* Teams grid */}
+        {/* Committees grid */}
         <motion.div
           className="grid md:grid-cols-3 gap-8 mb-20"
           initial="hidden"
@@ -117,7 +113,7 @@ const Teams = () => {
           }}
           viewport={{ once: true }}
         >
-          {teams.map((team, index) => (
+          {committees.map((committee, index) => (
             <motion.div
               key={index}
               className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow group"
@@ -128,9 +124,9 @@ const Teams = () => {
               whileHover={{
                 scale: 1.05,
                 backgroundColor:
-                  team.color === "orange"
+                  committee.color === "orange"
                     ? "#FFE5D1"
-                    : team.color === "blue"
+                    : committee.color === "blue"
                     ? "#D0E6FF"
                     : "#D5F5E3",
               }}
@@ -138,9 +134,9 @@ const Teams = () => {
             >
               <div
                 className={`w-16 h-16 bg-gradient-to-br ${
-                  team.color === "orange"
+                  committee.color === "orange"
                     ? "from-orange-500 to-red-500"
-                    : team.color === "blue"
+                    : committee.color === "blue"
                     ? "from-blue-500 to-indigo-500"
                     : "from-green-500 to-emerald-500"
                 } rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
@@ -149,26 +145,26 @@ const Teams = () => {
               </div>
 
               <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                {team.name}
+                {committee.name}
               </h3>
 
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-500">Captain:</span>
+                  <span className="text-slate-500">Head:</span>
                   <span className="font-medium text-slate-800">
-                    {team.captain}
+                    {committee.head}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-500">Players:</span>
+                  <span className="text-slate-500">Members:</span>
                   <span className="font-medium text-slate-800">
-                    {team.players}
+                    {committee.members}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-500">Latest Achievement:</span>
+                  <span className="text-slate-500">Achievement:</span>
                   <span className="font-medium text-green-600">
-                    {team.achievements}
+                    {committee.achievements}
                   </span>
                 </div>
               </div>
@@ -176,7 +172,7 @@ const Teams = () => {
           ))}
         </motion.div>
 
-        {/* Player spotlight */}
+        {/* Member spotlight */}
         <motion.div
           className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg"
           initial={{ opacity: 0, y: 60 }}
@@ -186,11 +182,11 @@ const Teams = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-slate-800 mb-4">
-              Player Spotlight
+              Member Spotlight
             </h3>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Get to know some of our star players who make Amature roll ball
-              Club a force to be reckoned with.
+              Get to know the key members of our committee who make our club
+              function smoothly.
             </p>
           </div>
 
@@ -204,7 +200,7 @@ const Teams = () => {
             }}
             viewport={{ once: true }}
           >
-            {players.map((player, index) => (
+            {members.map((member, index) => (
               <motion.div
                 key={index}
                 className="text-center rounded-2xl p-6 shadow-lg"
@@ -218,27 +214,26 @@ const Teams = () => {
                 }}
                 whileHover={{
                   scale: 1.08,
-                  backgroundColor: player.hoverColor,
+                  backgroundColor: member.hoverColor,
                 }}
               >
                 <img
-                  src={player.image}
-                  alt={player.name}
+                  src={member.image}
+                  alt={member.name}
                   className="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-4 border-slate-200 group-hover:scale-110 transition-transform"
                 />
                 <h4 className="text-xl font-bold text-slate-800 mb-2">
-                  {player.name}
+                  {member.name}
                 </h4>
-                <p className="text-slate-600 mb-2">{player.position}</p>
-                <p className="text-sm text-slate-500 mb-2">{player.team}</p>
+                <p className="text-slate-600 mb-2">{member.role}</p>
                 <div className="flex items-center justify-center space-x-1 mb-2">
                   <Star size={16} className="text-yellow-500" />
                   <span className="text-sm text-slate-600">
-                    {player.experience}
+                    {member.experience}
                   </span>
                 </div>
                 <p className="text-sm font-medium text-orange-600">
-                  {player.achievements}
+                  {member.achievements}
                 </p>
               </motion.div>
             ))}
@@ -249,4 +244,4 @@ const Teams = () => {
   );
 };
 
-export default Teams;
+export default Committee;

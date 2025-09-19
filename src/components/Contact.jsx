@@ -313,9 +313,13 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            Get In Touch
+          <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Get In{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+              Touch
+            </span>
           </h2>
+
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Ready to join Amature Roll Ball Club? Have questions about our
             programs? We'd love to hear from you and help you get started on

@@ -79,17 +79,21 @@ const Training = () => {
   return (
     <section id="training" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Section header */}
+        {/* Animated Section header */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
-            Training Programs
+          <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Training{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+              Programs
+            </span>
           </h2>
+
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Develop your roll ball skills with our comprehensive training
             programs designed for all ages and skill levels. Expert coaching and
@@ -115,6 +119,7 @@ const Training = () => {
               initial={{ opacity: 0, y: 50 }}
               variants={{ visible: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.6 }}
+              whileHover={{ backgroundColor: "#FFF7ED" }} // Hover color change
             >
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-slate-800">
@@ -198,7 +203,7 @@ const Training = () => {
                 <motion.div
                   key={index}
                   className="bg-white rounded-2xl p-6 shadow-lg"
-                  whileHover={{ scale: 1.03 }}
+                  whileHover={{ scale: 1.03, backgroundColor: "#FFF7ED" }} // Hover color change
                 >
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
@@ -250,7 +255,7 @@ const Training = () => {
                 <motion.div
                   key={index}
                   className="bg-white rounded-2xl p-6 shadow-lg"
-                  whileHover={{ scale: 1.03 }}
+                  whileHover={{ scale: 1.03, backgroundColor: "#E5F7FF" }} // Hover color change
                 >
                   <h4 className="text-xl font-bold text-slate-800 mb-3">
                     {facility.name}
