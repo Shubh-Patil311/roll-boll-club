@@ -11,6 +11,7 @@ import PhotoGallery from "./components/PhotoGallery";
 import "./App.css";
 import Events from "./components/Events";
 import Committee from "./components/Committee";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Committee />
         <Contact />
         <Footer />
+        <ScrollToTop />
       </main>
     </div>
   );
