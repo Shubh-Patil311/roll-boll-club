@@ -161,8 +161,8 @@ import React from "react";
 import { Target, Users, Award, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import RollBallImg from "../assets/Roll-Ball.jpeg";
-import TrainingImg from "../assets/RollBallIMG1.jpg";
-import TeamImg from "../assets/RollBallIMG2.webp";
+import TrainingImg from "../assets/RollBallIMG5.jpg";
+import TeamImg from "../assets/RollBallIMG2.jpg";
 import TournamentImg from "../assets/RollBallIMG3.jpg";
 
 const About = () => {
