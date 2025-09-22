@@ -169,13 +169,13 @@ const Events = () => {
                     </div>
                   </div>
 
-                  <motion.button
+                  {/* <motion.button
                     className="w-full bg-slate-800 text-white py-3 rounded-xl hover:bg-orange-600 transition-colors font-medium flex items-center justify-center space-x-2"
                     whileHover={{ scale: 1.05 }}
                   >
                     <Ticket size={20} />
                     <span>Get Tickets</span>
-                  </motion.button>
+                  </motion.button> */}
                 </motion.div>
               ))}
             </div>

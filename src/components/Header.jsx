@@ -116,10 +116,10 @@ const Header = () => {
               Training
             </a> */}
             <a
-              href="#contact"
+              href="#committee"
               className="text-slate-700 hover:text-orange-600 font-medium transition-colors"
             >
-              Contact
+              Committee
             </a>
             <button
               onClick={handleJoinNow}
