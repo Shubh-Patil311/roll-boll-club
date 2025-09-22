@@ -10,7 +10,7 @@ import Teams from "./components/Teams";
 import PhotoGallery from "./components/PhotoGallery";
 import "./App.css";
 import Events from "./components/Events";
-import Committee from "./components/committee";
+import Committee from "./components/Committee";
 
 function App() {
   return (
