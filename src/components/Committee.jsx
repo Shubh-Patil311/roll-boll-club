@@ -11,7 +11,7 @@ import Member4Img from "../assets/ProfilePic4.jpg";
 const Committee = () => {
   const members = [
     {
-      name: "Sangram Patil",
+      name: "Amruta Patil",
       role: "President",
       achievements: "Excellent leadership",
       phone: "+91 9876543210",
@@ -21,7 +21,7 @@ const Committee = () => {
       hoverColor: "#FFE5D1",
     },
     {
-      name: "Amruta Deshmukh",
+      name: "Amar Deshmukh",
       role: "Treasurer",
       achievements: "Financial expert",
       phone: "+91 9123456780",
@@ -31,7 +31,7 @@ const Committee = () => {
       hoverColor: "#D0E6FF",
     },
     {
-      name: "Pranav Patil",
+      name: "Sneha Patil",
       role: "Coordinator",
       achievements: "Event management pro",
       phone: "+91 9988776655",
@@ -41,7 +41,7 @@ const Committee = () => {
       hoverColor: "#D5F5E3",
     },
     {
-      name: "Sneha Kulkarni",
+      name: "Pranav Kulkarni",
       role: "Secretary",
       achievements: "Organizational skills",
       phone: "+91 9012345678",

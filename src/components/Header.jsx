@@ -160,12 +160,7 @@ const Header = () => {
               >
                 Teams
               </a>
-              {/* <a
-                href="#events"
-                className="text-slate-700 hover:text-orange-600 font-medium"
-              >
-                Events
-              </a> */}
+
               <a
                 href="#PhotoGallery"
                 className="text-slate-700 hover:text-orange-600 font-medium"
@@ -173,10 +168,16 @@ const Header = () => {
                 Photo Gallery
               </a>
               <a
-                href="#contact"
+                href="#events"
                 className="text-slate-700 hover:text-orange-600 font-medium"
               >
-                Contact
+                Events
+              </a>
+              <a
+                href="#committee"
+                className="text-slate-700 hover:text-orange-600 font-medium"
+              >
+                Committee
               </a>
               <button
                 onClick={handleJoinNow}
