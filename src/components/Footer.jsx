@@ -86,18 +86,18 @@ const Footer = () => {
               >
                 Photo Gallery
               </a>
-              {/* <a
+              <a
                 href="#events"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
               >
                 Events
-              </a> */}
-              {/* <a
-                href="#"
+              </a>
+              <a
+                href="#committee"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
               >
-                News & Updates
-              </a> */}
+                Committee
+              </a>
               {/* <a
                 href="#"
                 className="block text-slate-300 hover:text-orange-400 transition-colors"
