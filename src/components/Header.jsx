@@ -109,12 +109,12 @@ const Header = () => {
             >
               Gallery
             </a>
-            {/* <a
-              href="#training"
+            <a
+              href="#events"
               className="text-slate-700 hover:text-orange-600 font-medium transition-colors"
             >
-              Training
-            </a> */}
+              Events
+            </a>
             <a
               href="#committee"
               className="text-slate-700 hover:text-orange-600 font-medium transition-colors"
