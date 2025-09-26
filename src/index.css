@@ -4,6 +4,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* 🚫 no horizontal scroll */
+  overflow-x: hidden; /*no horizontal scroll */
   width: 100%;
 }

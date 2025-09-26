@@ -280,7 +280,7 @@
 // };
 
 // export default Contact;
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   MapPin,
   Phone,
@@ -296,13 +296,53 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("xzzawkze");
   const formRef = useRef(null);
 
+  const [errors, setErrors] = useState({});
+
+  const validateForm = (formData) => {
+    let newErrors = {};
+
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10,15}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid phone number";
+    }
+    if (!formData.interest) {
+      newErrors.interest = "Please select an option";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    return newErrors;
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = Object.fromEntries(new FormData(formRef.current));
+    const validationErrors = validateForm(formData);
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
     await handleSubmit(e);
   };
 
   // Reset form when submission is successful
-  React.useEffect(() => {
+  useEffect(() => {
     if (state.succeeded && formRef.current) {
       formRef.current.reset();
     }
@@ -425,6 +465,7 @@ const Contact = () => {
 
             <form ref={formRef} className="space-y-6" onSubmit={onSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
+                {/* First Name */}
                 <div>
                   <label
                     htmlFor="firstName"
@@ -436,10 +477,19 @@ const Contact = () => {
                     type="text"
                     id="firstName"
                     name="firstName"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className={`w-full px-4 py-3 rounded-xl border ${
+                      errors.firstName ? "border-red-500" : "border-slate-300"
+                    } focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors`}
                     placeholder="Your first name"
                   />
+                  {errors.firstName && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.firstName}
+                    </p>
+                  )}
                 </div>
+
+                {/* Last Name */}
                 <div>
                   <label
                     htmlFor="lastName"
@@ -451,12 +501,20 @@ const Contact = () => {
                     type="text"
                     id="lastName"
                     name="lastName"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className={`w-full px-4 py-3 rounded-xl border ${
+                      errors.lastName ? "border-red-500" : "border-slate-300"
+                    } focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors`}
                     placeholder="Your last name"
                   />
+                  {errors.lastName && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.lastName}
+                    </p>
+                  )}
                 </div>
               </div>
 
+              {/* Email */}
               <div>
                 <label
                   htmlFor="email"
@@ -468,11 +526,17 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    errors.email ? "border-red-500" : "border-slate-300"
+                  } focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors`}
                   placeholder="your.email@example.com"
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
+              {/* Phone */}
               <div>
                 <label
                   htmlFor="phone"
@@ -484,11 +548,17 @@ const Contact = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    errors.phone ? "border-red-500" : "border-slate-300"
+                  } focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors`}
                   placeholder="+91"
                 />
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                )}
               </div>
 
+              {/* Interest */}
               <div>
                 <label
                   htmlFor="interest"
@@ -499,7 +569,9 @@ const Contact = () => {
                 <select
                   id="interest"
                   name="interest"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    errors.interest ? "border-red-500" : "border-slate-300"
+                  } focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors`}
                 >
                   <option value="">Select an option</option>
                   <option value="beginner">Beginner Training Program</option>
@@ -510,8 +582,12 @@ const Contact = () => {
                   <option value="events">Events & Tournaments</option>
                   <option value="other">Other</option>
                 </select>
+                {errors.interest && (
+                  <p className="text-red-500 text-sm mt-1">{errors.interest}</p>
+                )}
               </div>
 
+              {/* Message */}
               <div>
                 <label
                   htmlFor="message"
@@ -523,11 +599,17 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors resize-none"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    errors.message ? "border-red-500" : "border-slate-300"
+                  } focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors resize-none`}
                   placeholder="Tell us more about your interest..."
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
 
+              {/* Submit */}
               <button
                 type="submit"
                 disabled={state.submitting}
